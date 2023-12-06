@@ -1,19 +1,28 @@
 #Script to estimate the model parameters using a linear approximation
 
-#library(dplyr)
+#install package dplyr for piping
+install.packages("dplyr")
 
-growth_data <- read.csv("???")
+#load package
+library(dplyr)
 
-#Case 1. K >> N0, t is small
+#load data
+growth_data <- read.csv("experiment1.csv")
 
-data_subset1 <- growth_data %>% filter(t<???) %>% mutate(N_log = log(N))
+##Case 1. K >> N0, t is small
 
+#filter data to when t<1000 because this is when we see linear growth
+data_subset1 <- growth_data %>% filter(t<1000) %>% mutate(N_log = log(N))
+
+#run the linear model for case 1
 model1 <- lm(N_log ~ t, data_subset1)
 summary(model1)
 
-#Case 2. N(t) = K
+##Case 2. N(t) = K
 
-data_subset2 <- growth_data %>% filter(t>???)
+#filter the data to when t>3000 because this is when it reaches carrying capacity
+data_subset2 <- growth_data %>% filter(t>3000)
 
+#run the linear model for case 2
 model2 <- lm(N ~ 1, data_subset2)
 summary(model2)
