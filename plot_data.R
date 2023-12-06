@@ -1,11 +1,16 @@
 #Script to plot the logistic growth data
 
-growth_data <- read.csv("???")
+#load the data
+growth_data <- read.csv("experiment1.csv")
 
+#install package ggplot2 for plotting
 install.packages("ggplot2")
+
+#load package 
 library(ggplot2)
 
-ggplot(aes(t,N), data = ???) +
+#logistic growth of exp1 plot
+ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
   
@@ -15,7 +20,8 @@ ggplot(aes(t,N), data = ???) +
   
   theme_bw()
 
-ggplot(aes(t,???), data = growth_data) +
+#logistic growth of exp1 on semi-log plot
+ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
   
