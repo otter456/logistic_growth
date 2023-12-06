@@ -1,7 +1,7 @@
 # Reproducible Research: version control with a focus on GitHub and R 
 
 ## Question 1: 
-*(10 points) Annotate the README.md file in your logistic_growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which *.csv file you used).*
+*(10 points) Annotate the README.md file in your logistic_growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which .csv file you used).*
 
 ### Introduction
 
