@@ -1,7 +1,7 @@
 # Reproducible Research: version control with a focus on GitHub and R 
 
 ## Question 1: 
-(10 points) Annotate the README.md file in your logistic_growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which *.csv file you used).
+*(10 points) Annotate the README.md file in your logistic_growth repo with more detailed information about the analysis. Add a section on the results and include the estimates for N0, r and K (mention which *.csv file you used).*
 
 ### Introduction
 
@@ -15,7 +15,7 @@
 
 ![image](https://github.com/otter456/logistic_growth/assets/150150890/7c17e994-b4cc-4324-98d1-e259ebd540cf)
 
-* If we then make a semilog plot by transforming the Y axis, we see an increasing linear relationship at the early time points (red rectangle) and then the population reaches a constant size again at equilibrium (blue rectangle).
+* If we then make a semi-log plot by log transforming the y axis, we see an increasing linear relationship at the early time points (red rectangle) and then the population reaches a constant size again at equilibrium (blue rectangle).
   
 ![image](https://github.com/otter456/logistic_growth/assets/150150890/25e3cb7f-a203-417f-afec-c3c69642d9ef)
 
@@ -29,11 +29,11 @@
 
 * Model 1: To estimate N0 and r, we can restrict ourselves to a region that shows exponential growth i.e., if N << K then (1-(N/K)) ~ 1, and if t is small, then N ~ N0*e^(rt) and the population will grow exponentially.
 
-* To do this, subset the data to when t < 1000 because this is where the population growth is linear. Then fit a linear model to output an estimate for ln(N) and r
+   * To do this, subset the data to when t < 1000 because this is where the population growth is linear. Then fit a linear model to output an estimate for ln(N) and r
   
 * Model 2: To estimate K, we can set t to tends towards infinity and find that N(t) tends towards K i.e., the population size is equal to the carrying capacity. 
 
-* To do this, subset the data to when t > 3000 because this is when the population size has reached equilibrium. Then fit a linear model to output an estimate for K
+   * To do this, subset the data to when t > 3000 because this is when the population size has reached equilibrium. Then fit a linear model to output an estimate for K
 
 **(found in fit_linear_model.R)**
 
@@ -46,7 +46,7 @@
 **(found in plot_data_and_model.R)**
 
 ## Question 2: 
-(10 points) Use your estimates of N0 and r to calculate the population size at t = 4980 min, assuming that the population grows exponentially. How does it compare to the population size predicted under logistic growth?
+*(10 points) Use your estimates of N0 and r to calculate the population size at t = 4980 min, assuming that the population grows exponentially. How does it compare to the population size predicted under logistic growth?*
 
 * Assuming exponential growth, I found that N = 5.038612e+24 at t = 4980 min.
 
@@ -57,11 +57,11 @@
 **(found in compare_exp_and_logistic.R)**
 
 ## Question 3: 
-(20 points) Add an R script to your repository that makes a graph comparing the exponential and logistic growth curves (using the same parameter estimates you found). Upload this graph to your repo and include it in the README.md file so it can be viewed in the repo homepage. 
+*(20 points) Add an R script to your repository that makes a graph comparing the exponential and logistic growth curves (using the same parameter estimates you found). Upload this graph to your repo and include it in the README.md file so it can be viewed in the repo homepage.*
 
 * When these values are plotted on a graph, we can see that when exponential growth is assumed (red line) the population grows without bound. This is because exponential growth can only be assumed at small values of N and t.
   
-* On the other hand, when logistical growth is assumed (blue line), the population size is limited by the carrying capacity. This is because as N approaches K, dN/dt approaches zero and the population reaches equilibrium.
+* On the other hand, when logistical growth is assumed (blue line), the population size is limited by the carrying capacity (K). This is because as N approaches K, dN/dt approaches zero and the population reaches equilibrium.
 
 ![image](https://github.com/otter456/logistic_growth/assets/150150890/2ce08514-2586-4dc4-8f2c-3aef329cef15)
 
